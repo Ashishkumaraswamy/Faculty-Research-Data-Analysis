@@ -1,5 +1,6 @@
 # ignore venv directory
 venv/
+chromedriver_win32/
 
 #ignore csv
 .csv
