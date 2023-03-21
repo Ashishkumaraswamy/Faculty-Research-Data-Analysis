@@ -1,0 +1,5 @@
+# ignore venv directory
+venv/
+
+#ignore csv
+.csv
