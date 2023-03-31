@@ -31,12 +31,18 @@ def display_metrics():
         st.metric('Faculties published more than 15 journals',len(faculty_info[faculty_info['No. of Journals']>=15]),0)
 
 def display_charts():
+    st.markdown("<hr>",unsafe_allow_html=True)
+    st.header("No. of Journals Published By Faculty")
     fig = plot_utils.bargraph(faculty_info['Name'],
                               faculty_info['No. of Journals'], 'No. of Journals', 'Name', 'Journals')
     st.plotly_chart(fig, use_container_width=True)
+    st.markdown("<hr>",unsafe_allow_html=True)
+    st.header("H-Index of Faculties")
+    fig1= plot_utils.bargraph(faculty_info['Name'],
+                              faculty_info['H-Index_All'], 'H-Index', 'Name', 'H-Index')
+    st.plotly_chart(fig, use_container_width=True)
 
 def display_faculty_info_table():
-    
     faculty_info_props=faculty_info.drop('Research Areas',axis=1)
     st.table(faculty_info_props)
 
